@@ -2,34 +2,34 @@
 using namespace std;
 int main()
 {
-    int n,k,ans,cnt,y,x;
+    int n,k,res,kol,y,x;
     string s;
     cin >> n >> k;
-    vector<char> v(n);
+    vector<char> mas(n);
     cin >> s;
     for(int i=0;i<n;i++) {
-        v[i]=s[i];
+        mas[i]=s[i];
     }
-    sort( v.begin(), v.end());
-    x=v[0]-'a';
+    sort(mas.begin(), mas.end());
+    x=mas[0]-'a';
      x++;
-    ans=x;
-    cnt=1;
+    res=x;
+    kol=1;
     for(int i=1;i<n;i++)
     {
-        if(cnt==k)
+        if(kol==k)
             break;
-        y=v[i]-'a';
+        y=mas[i]-'a';
         y++;
         if(y>x+1)
         {
-            cnt++;
-            ans+=y;
+            kol++;
+            res+=y;
             x=y;
         }
     }
-    if(cnt==k)
-        cout << ans << endl;
+    if(kol==k)
+        cout << res << endl;
     else
         cout << "-1" << endl;
 }

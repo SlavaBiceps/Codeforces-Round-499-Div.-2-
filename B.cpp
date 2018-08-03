@@ -2,24 +2,23 @@
 using namespace std;
 
 int main() {
-	long s,k,n,x,max,temp;
-	long a[101];
+	long s,k,t,n,x,max;
+	long mas[1002];
 	cin >> k >> n;
 	max=0;
 	for (long i=0; i<n; i++) {
 		cin >> x;
-		a[x]++;
+		mas[x]++;
 	}
 	for (long i=1; i<=n/k; i++) {
-		temp=0;
+		t=0;
 		for (long j=0; j<101; j++) {
-			temp+=a[j]/i;
+			t+=mas[j]/i;
 		}
-		if (temp>=k) {
+		if (t>=k) {
 			max = i;
 		}
 	}
 	cout << max;
 	return 0;
 }
-
